@@ -3,67 +3,70 @@
 
 @section('content')
 
-<div class="container">
-    <div class="row justify-content-center">
-      <div class="col-md-5">
-        <div class="card shadow-lg rounded-4 border-0">
-          <div class="card-body p-5">
+ <main>
+    <div class="container">
 
-            <!-- Logo + App Name -->
-            <div class="text-center mb-4">
-             <img src="{{ asset('images/modernlogo.svg') }}" alt="App Logo" width="250" height="250" class="mb-2">
-               
-              <p class="text-muted mb-0">Tabulation and Duckpin Bowling Tournament Management System</p>
-            </div>
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
 
-            <!-- Errors -->
-            @if ($errors->any())
-              <div class="alert alert-danger">
-                <ul class="mb-0">
-                  @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                  @endforeach
-                </ul>
-              </div>
-            @endif
 
-            <!-- Login Form -->
-            <form method="POST" action="">
-              @csrf
+              <div class="card mb-3">
 
-              <div class="mb-3">
-                <label for="email" class="form-label">Username</label>
-                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
-              </div>
+                <div class="card-body">
 
-              <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input id="password" type="password" class="form-control" name="password" required>
-              </div>
+                  
+                   
+                 
 
-              <div class="d-flex justify-content-between align-items-center mb-4">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" name="remember" id="remember">
-                  <label class="form-check-label" for="remember">Remember me</label>
+                  <div class="pt-4 pb-2">
+                    
+                    <h5 class="card-title text-center pb-0 fs-4">Login </h5>
+                   
+                  </div>
+
+                  <form class="row g-3 needs-validation" novalidate>
+
+                    <div class="col-12">
+                      <label for="yourUsername" class="form-label">Username</label>
+                      <div class="input-group has-validation">
+                        <input type="text" name="username" class="form-control" id="yourUsername"  placeholder="Enter your username" required>
+                        <div class="invalid-feedback">Please enter your username.</div>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourPassword" class="form-label">Password</label>
+                      <input type="password" name="password" class="form-control" id="yourPassword"  placeholder="Enter your username" required>
+                      <div class="invalid-feedback">Please enter your password!</div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="remember" value="true" id="rememberMe">
+                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button class="btn btn-main w-100" type="submit">Login</button>
+                    </div>
+
+                  </form>
+
                 </div>
-                <a href="" class="small text-decoration-none">Forgot password?</a>
               </div>
 
-              <div class="d-grid">
-                <button type="submit" class="btn btn-primary">Sign In</button>
-              </div>
-            </form>
-
-            <p class="text-center text-muted mt-4 mb-0">
-              Don’t have an account?
-              <a href="" class="fw-semibold text-decoration-none">Register</a>
-            </p>
-
+            </div>
           </div>
         </div>
-      </div>
+
+      </section>
+
     </div>
-  </div>
+  </main><!-- End #main -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
  
 @endsection

@@ -6,3 +6,4 @@ Route::get('/', function () {
     return view('back.pages.login');
 });
 
+Route::view('/home','back.pages.home')->name('home');
