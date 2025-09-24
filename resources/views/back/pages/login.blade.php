@@ -22,7 +22,7 @@
 
                   <div class="pt-4 pb-2">
                     
-                    <h5 class="card-title text-center pb-0 fs-4">Login </h5>
+                    <h5 class="card-title card-title-login text-center pb-0 fs-4 d-none d-lg-block">Login </h5>
                    
                   </div>
 
