@@ -16,12 +16,12 @@
 	<!---Styles---->
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
-	
+		
 	@stack('stylesheets')
 
 	
 </head>
-<body > 
+<body class="loginbody"> 
 	<!-- Content Page -->
 	@yield('content')
 

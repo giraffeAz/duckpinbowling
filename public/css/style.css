@@ -10,6 +10,25 @@ body {
   color: #444444;
 }
 
+.loginbody{
+  background: linear-gradient(135deg, #003366, #001a33, #FFD700);
+  background-size: 300% 300%;
+  animation: gradientShift 12s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 a {
   color: #4154f1;
   text-decoration: none;
@@ -254,14 +273,18 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 20px;
 }
 
-.btn-main{
-  background-color: #0056B3;
-  color: #FFFFFF;
+.btn-main {
+  background-color: #003366;
+  border: none;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
 }
 
-.btn-main:hover{
-  background-color: #004494;
-  color: #333333;
+.btn-main:hover {
+  background-color: #FFD700;
+  color: #003366;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
 }
 
 /* Close Button */
@@ -372,6 +395,12 @@ h1, h2, h3, h4, h5, h6 {
   color: #003366;
 }
 
+.card-title-sys{
+  font-size: 26px;
+  font-weight: 700;
+  color: #FFD700;
+  font-family: "Poppins", sans-serif;
+}
 
 
 
@@ -567,6 +596,11 @@ h1, h2, h3, h4, h5, h6 {
   height: 64px;
   flex-shrink: 0;
   flex-grow: 0;
+}
+
+.img-fixed{
+  width: 100%;
+  object-fit: cover;
 }
 .dashboard .sales-card .card-icon {
   color: #4154f1;
@@ -929,4 +963,57 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   font-size: 13px;
   color: #012970;
+}
+
+.bracket-container {
+  display: flex;
+  justify-content: space-around;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.round {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.match {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin: 10px 0;
+  width: 160px;
+  background: #f8f9fa;
+}
+
+.team {
+  padding: 6px;
+  margin: 4px 0;
+  background: white;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 500;
+  border: 1px solid #e0e0e0;
+}
+
+.team.champion {
+  background: #ffc107;
+  font-weight: bold;
+}
+
+.match-day {
+  margin-bottom: 25px;
+}
+.match-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 8px 0;
+  background: #f8f9fa;
+}
+.badge-status {
+  font-size: 0.85rem;
+  padding: 5px 10px;
 }

@@ -32,7 +32,7 @@
   <aside id="sidebar" class="sidebar">
 
     <div class="d-flex align-items-center justify-content-between logoside">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="{{ route('home') }}" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
         <span class="d-none d-lg-block">TDBMS</span>
       </a>
@@ -42,11 +42,11 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="index.html">
+        <a class="nav-link collapsed" href="{{ route('home') }}">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
-      </li><!-- End Dashboard Nav -->
+      </li>
 
       <li class="nav-item">
         <a class="nav-link " data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
@@ -54,79 +54,47 @@
         </a>
         <ul id="components-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
            <li>
-            <a href="components-alerts.html">
+            <a href="{{ route('setup')}}">
               <span>Set Up</span>
             </a>
           </li>
           <li>
-            <a href="components-alerts.html">
+            <a href="{{ route('organize')}}">
               <span>Organize</span>
             </a>
           </li>
           <li>
-            <a href="components-accordion.html">
+            <a href="{{ route('player-registration') }}">
               <span>Player/Team Registration</span>
             </a>
           </li>
           <li>
-            <a href="components-badges.html">
-              <span>Bracket</span>
+            <a href="{{ route('bracket') }}">
+              <span>Generate Bracket</span>
             </a>
           </li>
           <li>
-            <a href="components-breadcrumbs.html">
-              <span>Match</span>
+            <a href="{{ route('matches') }}">
+              <span>Match Schedules</span>
             </a>
           </li>
         
         </ul>
-      </li><!-- End Components Nav -->
+      </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-journal-text"></i><span>Scoring</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed" href="{{ route('scoring') }}">
+          <i class="bi bi-journal-text"></i>
+          <span>Scoring</span>
         </a>
-        <ul id="forms-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="forms-elements.html">
-              <span>Form Elements</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-layouts.html">
-              <span>Form Layouts</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-editors.html">
-              <span>Form Editors</span>
-            </a>
-          </li>
-          <li>
-            <a href="forms-validation.html">
-              <span>Form Validation</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Forms Nav -->
+      </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-bar-chart"></i><span>Leaderboard</span><i class="bi bi-chevron-down ms-auto"></i>
+        <a class="nav-link collapsed" href="{{ route('leaderboard') }}">
+          <i class="bi bi-bar-chart"></i>
+          <span>Leaderboard</span>
         </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="tables-general.html">
-              <span>General Tables</span>
-            </a>
-          </li>
-          <li>
-            <a href="tables-data.html">
-              <span>Data Tables</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
+      </li>
 
     </ul>
 
@@ -139,7 +107,12 @@
     @stack('scripts')
 	<!--Livewire Framework----->
 	@livewireScripts
-	<script src="{{ asset('js/bootstrap/bootstrap.bundle.min.js') }}" type="type/javascript" ></script>
+	<script src="{{ asset('js/bootstrap/bootstrap.bundle.min.js') }}"></script>
 	<script src="{{ asset('js/main.js')}}"></script>
+  <script src="{{asset ('vendor/quill/quill.min.js')}}"></script>
+  <script src="{{asset ('vendor/simple-datatables/simple-datatables.js')}}"></script>
+  <script src="{{asset ('vendor/tinymce/tinymce.min.js')}}"></script>
+  <script src="{{asset ('vendor/php-email-form/validate.js')}}"></script>
+
 </body>
 </html>

@@ -4,74 +4,7 @@
 
 <main id="main" class="main">
 
-    <header class="d-flex align-items-center">
-     <div class="d-flex align-items-center justify-content-between">
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Hamburger -->
-
-    <nav class="header-nav ms-auto">
-      <ul class="d-flex align-items-center">
-
-        <li class="nav-item dropdown pe-3">
-
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Juan Dela Cruz</span>
-          </a><!-- End Profile Iamge Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-            <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-person"></i>
-                <span>My Profile</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                <i class="bi bi-gear"></i>
-                <span>Account Settings</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
-                <i class="bi bi-question-circle"></i>
-                <span>Need Help?</span>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
-            </li>
-
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
-
-      </ul>
-    </nav><!-- End Icons Navigation -->
-
-    </header>
-
+  @include('back.partials.header')
 
     <div class="pagetitle">
       <h1>Registration</h1>
@@ -93,120 +26,49 @@
 
               <!-- Horizontal Form -->
               <form>
-                <div class="row mb-3">
-                  <label class="col-sm-2 col-form-label">Tournament</label>
-                  <div class="col-sm-10">
-                    <select class="form-select" aria-label="Default select example">
-                      <option selected>Select Tournament</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                  </div>
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">Tournament</label>
+                <div class="col-sm-10">
+                  <select class="form-select" aria-label="Select Tournament">
+                    <option selected>-- Select Tournament --</option>
+                    <option value="1">2025 Zamba Cup</option>
+                    <option value="2">Summer Invitational</option>
+                    <option value="3">Corporate League</option>
+                  </select>
                 </div>
-                <div class="row mb-3">
-                  <label class="col-sm-2 col-form-label">Category</label>
-                  <div class="col-sm-10">
-                    <select class="form-select" aria-label="Default select example" disabled>
-                      <option selected>Double</option>
-                      <option value="1">One</option>
-                      <option value="2">Two</option>
-                      <option value="3">Three</option>
-                    </select>
-                  </div>
-                </div>
+              </div>
 
-                <div class="row mb-3">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label">Team Name</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputText" placeholder="Enter Team Name">
-                  </div>
+              <div class="row mb-3">
+                <label class="col-sm-2 col-form-label">Category</label>
+                <div class="col-sm-10">
+                  <select id="categorySelect" class="form-select" aria-label="Select Category">
+                    <option value="single">Single</option>
+                    <option value="double">Double</option>
+                    <option value="mixed">Mixed Double</option>
+                    <option value="trios">Trios</option>
+                    <option value="trios">Mixed Trios</option>
+                  </select>
                 </div>
+              </div>
 
-                <h5 class="card-title">Player 1</h5>
+              <div class="row mb-3" id="teamNameWrapper" style="display:none;">
+                <label class="col-sm-2 col-form-label">Team Name</label>
+                <div class="col-sm-10">
+                  <input type="text" id="teamNameInput" class="form-control" placeholder="Enter Team Name">
+                </div>
+              </div>
 
-                <div class="row mb-3">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label">First Name</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputText" placeholder="Enter First Name">
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label">Last Name</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputText" placeholder="Enter Last Name">
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label">Age</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputText" placeholder="Enter Age">
-                  </div>
-                </div>
-               
-                <fieldset class="row mb-3">
-                  <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
-                  <div class="col-sm-10">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                      <label class="form-check-label" for="gridRadios1">
-                        Female
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                      <label class="form-check-label" for="gridRadios2">
-                        Male
-                      </label>
-                    </div>
-                  
-                  </div>
-                </fieldset>
+              <!-- Players will be appended here -->
+              <div id="playersWrapper"></div>
 
-                <h5 class="card-title">Player 2</h5>
+              <div class="mb-3">
+                <button type="button" id="addPlayerBtn" class="btn btn-secondary d-none">Add Player</button>
+              </div>
 
-                <div class="row mb-3">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label">First Name</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputText" placeholder="Enter First Name">
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label">Last Name</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputText" placeholder="Enter Second Name">
-                  </div>
-                </div>
-                <div class="row mb-3">
-                  <label for="inputEmail3" class="col-sm-2 col-form-label">Age</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control" id="inputText" placeholder="Enter Age">
-                  </div>
-                </div>
-               
-                <fieldset class="row mb-3">
-                  <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
-                  <div class="col-sm-10">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                      <label class="form-check-label" for="gridRadios1">
-                        Female
-                      </label>
-                    </div>
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                      <label class="form-check-label" for="gridRadios2">
-                        Male
-                      </label>
-                    </div>
-                  
-                  </div>
-                </fieldset>
-              
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Register</button>
-                </div>
-              </form><!-- End Horizontal Form -->
+              <div class="text-center">
+                <button type="submit" class="btn btn-primary">Register</button>
+              </div>
+            </form>
 
             </div>
           </div>
@@ -217,5 +79,111 @@
     </section>
 
   </main><!-- End #main -->
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const categorySelect = document.getElementById("categorySelect");
+      const addPlayerBtn = document.getElementById("addPlayerBtn");
+      const playersWrapper = document.getElementById("playersWrapper");
+      let playerCount = 1;
+      let maxPlayers = 1;
+
+      function renderPlayer(num) {
+        return `
+          <div class="player-block mb-4 border rounded p-3" id="player-${num}">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+              <h5 class="card-title mb-0">Player ${num}</h5>
+              ${num > 1 ? `<button type="button" class="btn btn-sm btn-danger remove-player" data-id="${num}"><i class="bi bi-x-lg"></i></button>` : ""}
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-2 col-form-label">First Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="firstname${num}" placeholder="Enter First Name">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-2 col-form-label">Last Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="lastname${num}" placeholder="Enter Last Name">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label class="col-sm-2 col-form-label">Age</label>
+              <div class="col-sm-10">
+                <input type="number" class="form-control" name="age${num}" placeholder="Enter Age">
+              </div>
+            </div>
+            <fieldset class="row mb-3">
+              <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender${num}" value="female" checked>
+                  <label class="form-check-label">Female</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gender${num}" value="male">
+                  <label class="form-check-label">Male</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        `;
+      }
+
+      function resetPlayers() {
+        playersWrapper.innerHTML = renderPlayer(1);
+        playerCount = 1;
+      }
+
+      categorySelect.addEventListener("change", function () {
+        resetPlayers();
+          
+        if (this.value === "single") {
+          teamNameWrapper.style.display = "none";
+          teamNameInput.removeAttribute("required");
+        } else {
+          teamNameWrapper.style.display = "flex";
+          teamNameInput.setAttribute("required", "required");
+        }
+
+        if (this.value === "single") {
+          maxPlayers = 1;
+          addPlayerBtn.classList.add("d-none");
+        } else if (this.value === "double" || this.value === "mixed") {
+          maxPlayers = 2;
+          addPlayerBtn.classList.remove("d-none");
+        } else if (this.value === "trios") {
+          maxPlayers = Infinity;
+          addPlayerBtn.classList.remove("d-none");
+        }
+      });
+
+      addPlayerBtn.addEventListener("click", function () {
+        if (playerCount < maxPlayers) {
+          playerCount++;
+          playersWrapper.insertAdjacentHTML("beforeend", renderPlayer(playerCount));
+        }
+        if (playerCount >= maxPlayers && maxPlayers !== Infinity) {
+          addPlayerBtn.classList.add("d-none");
+        }
+      });
+
+      // Handle removing players
+      playersWrapper.addEventListener("click", function (e) {
+        if (e.target.classList.contains("remove-player")) {
+          const id = e.target.getAttribute("data-id");
+          document.getElementById(`player-${id}`).remove();
+          playerCount--;
+
+          // Show Add button again if under max
+          if (playerCount < maxPlayers) {
+            addPlayerBtn.classList.remove("d-none");
+          }
+        }
+      });
+
+      resetPlayers(); // initialize with first player
+    });
+    </script>
 
 @endsection

@@ -16,13 +16,13 @@
 
                 <div class="card-body">
 
-                  
-                   
-                 
+                
 
                   <div class="pt-4 pb-2">
+
+                    <h6 class="card-title card-title-sys text-center pb-0 fs-4 d-none d-lg-block">TDBMS</h6>
                     
-                    <h5 class="card-title card-title-login text-center pb-0 fs-4 d-none d-lg-block">Login </h5>
+                    <h5 class="card-title card-title-login text-center pb-0 fs-4 d-none d-lg-block">Welcome, Please Login </h5>
                    
                   </div>
 
@@ -49,7 +49,7 @@
                       </div>
                     </div>
                     <div class="col-12">
-                      <button class="btn btn-main w-100" type="submit">Login</button>
+                      <button class="btn btn-main w-100" type="submit"><a class="nav-link collapsed" href="{{ route('home') }}">Login</a></button>
                     </div>
 
                   </form>
@@ -65,8 +65,5 @@
 
     </div>
   </main><!-- End #main -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
  
 @endsection
