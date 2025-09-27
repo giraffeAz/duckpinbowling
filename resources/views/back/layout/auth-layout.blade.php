@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<title>TDBMS - @yield('title')</title>
+	<title>DBTTMS - @yield('title')</title>
 
 	<!--logo-->
 	<link rel="shortcut icon" href="{{ url('images/modernlogo.ico') }}">

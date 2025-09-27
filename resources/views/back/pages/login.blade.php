@@ -20,7 +20,7 @@
 
                   <div class="pt-4 pb-2">
 
-                    <h6 class="card-title card-title-sys text-center pb-0 fs-4 d-none d-lg-block">TDBMS</h6>
+                    <h6 class="card-title card-title-sys text-center pb-0 fs-4 d-none d-lg-block">DBTTMS</h6>
                     
                     <h5 class="card-title card-title-login text-center pb-0 fs-4 d-none d-lg-block">Welcome, Please Login </h5>
                    

@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
-	<title>TDBMS - @yield('title')</title>
+	<title>DBTTMS - @yield('title')</title>
 
 	<!--logo-->
 	<link rel="shortcut icon" href="{{ url('images/modernlogo.ico') }}">
@@ -34,7 +34,7 @@
     <div class="d-flex align-items-center justify-content-between logoside">
       <a href="{{ route('home') }}" class="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">TDBMS</span>
+        <span class="d-none d-lg-block">DBTTMS</span>
       </a>
       
     </div><!-- End Logo -->
