@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<title>TDBMS -  Scoring </title>
+
+	<!--logo-->
+	<link rel="shortcut icon" href="http://localhost/images/modernlogo.ico">
+
+	<!--Bootstrap CSS-->
+
+	<link rel="stylesheet" href="http://localhost/css/bootstrap/bootstrap.min.css">
+
+  <link rel="stylesheet" href="http://localhost/vendor/bootstrap-icons/bootstrap-icons.css">
+  <link rel="stylesheet" href="http://localhost/vendor/boxicons/css/boxicons.min.css">
+  <link rel="stylesheet" href="http://localhost/vendor/remixicon/remixicon.css">
+
+	<!---Styles---->
+	<link rel="stylesheet" href="http://localhost/css/style.css">
+
+	
+	
+	
+</head>
+<body > 
+ 
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    <div class="d-flex align-items-center justify-content-between logoside">
+      <a href="http://localhost/home" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">TDBMS</span>
+      </a>
+      
+    </div><!-- End Logo -->
+
+    <ul class="sidebar-nav" id="sidebar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="http://localhost/home">
+          <i class="bi bi-grid"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link " data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Tournament</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse show" data-bs-parent="#sidebar-nav">
+           <li>
+            <a href="http://localhost/setup">
+              <span>Set Up</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://localhost/organize">
+              <span>Organize</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://localhost/player-registration">
+              <span>Player/Team Registration</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://localhost/bracket">
+              <span>Generate Bracket</span>
+            </a>
+          </li>
+          <li>
+            <a href="http://localhost/matches">
+              <span>Match Schedules</span>
+            </a>
+          </li>
+        
+        </ul>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="http://localhost/scoring">
+          <i class="bi bi-journal-text"></i>
+          <span>Scoring</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="http://localhost/leaderboard">
+          <i class="bi bi-bar-chart"></i>
+          <span>Leaderboard</span>
+        </a>
+      </li>
+
+    </ul>
+
+  </aside><!-- End Sidebar-->
+
+
+	<!-- Content Page -->
+	
+<main id="main" class="main">
+
+  <header class="d-flex align-items-center">
+     <div class="d-flex align-items-center justify-content-between">
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div><!-- End Hamburger -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <span class="d-none d-md-block dropdown-toggle ps-2">Juan Dela Cruz</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6></h6>
+              <span>Admin</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+</header>
+  <div class="pagetitle">
+    <h1>Scoring</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="http://localhost/home">Dashboard</a></li>
+        <li class="breadcrumb-item">Tournament</li>
+        <li class="breadcrumb-item active">Scoring</li>
+      </ol>
+    </nav>
+  </div><!-- End Page Title -->
+
+  <section class="section">
+    <div class="row">
+      <div class="col-lg-12">
+
+        <!-- Match Selector -->
+        <div class="card mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Select Match</h5>
+            <div class="row g-3 align-items-center">
+              <div class="col-md-6">
+                <select class="form-select" id="matchSelector">
+                  <option value="">-- Choose a match --</option>
+                  <option value="single">Player 1 vs Player 2 (Singles)</option>
+                  <option value="double">Team Alpha vs Team Beta (Doubles)</option>
+                  <option value="trio">Team Red vs Team Blue (Trios)</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <button class="btn btn-primary" id="loadMatch">Load Match</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Score Input</h5>
+            <p class="text-muted">Enter frame scores. Strike, Spare, and Break are numeric inputs.</p>
+
+            <!-- Success Alert -->
+            <div id="successAlert" class="alert alert-success alert-dismissible fade show d-none" role="alert">
+               Scores saved successfully!
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
+            <div class="table-responsive">
+            <table class="table table-bordered mb-0" id="scoreTable">
+                <thead class="table-light">
+                <tr id="scoreHeader"></tr>
+                </thead>
+                <tbody id="scoreBody"></tbody>
+            </table>
+            </div>
+
+            <div class="text-end mt-3">
+            <button class="btn btn-success me-2" id="saveScores">Save Scores</button>
+            <button class="btn btn-dark">Finalize Match</button>
+            </div>
+        </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const matchSelector = document.getElementById("matchSelector");
+  const loadMatchBtn = document.getElementById("loadMatch");
+  const scoreHeader = document.getElementById("scoreHeader");
+  const scoreBody = document.getElementById("scoreBody");
+  const saveBtn = document.getElementById("saveScores");
+  const successAlert = document.getElementById("successAlert");
+
+  loadMatchBtn.addEventListener("click", () => {
+    const type = matchSelector.value;
+    if (!type) {
+      alert("Please select a match.");
+      return;
+    }
+
+    // Reset table
+    scoreHeader.innerHTML = "";
+    scoreBody.innerHTML = "";
+
+    // Common headers
+    scoreHeader.innerHTML = `
+      <th>#</th>
+      <th>Player/Team</th>
+      <th>Frame 1</th>
+      <th>Frame 2</th>
+      <th>Frame 3</th>
+      <th>Frame 4</th>
+      <th>Frame 5</th>
+      <th>Frame 6</th>
+      <th>Frame 7</th>
+      <th>Frame 8</th>
+      <th>Frame 9</th>
+      <th>Frame 10</th>
+      <th>Strikes</th>
+      <th>Spares</th>
+      <th>Breaks</th>
+      <th>Total</th>
+    `;
+
+    let rows = [];
+
+    if (type === "single") {
+      rows = ["Player A", "Player B"];
+    } else if (type === "double") {
+      rows = [
+        "Team Alpha - Player 1", "Team Alpha - Player 2", 
+        "Team Beta - Player 1", "Team Beta - Player 2"
+      ];
+    } else if (type === "trio") {
+      rows = [
+        "Team Red - Player 1", "Team Red - Player 2", "Team Red - Player 3",
+        "Team Blue - Player 1", "Team Blue - Player 2", "Team Blue - Player 3"
+      ];
+    }
+
+    rows.forEach((name, index) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${index + 1}</td>
+        <td>${name}</td>
+        ${Array.from({length: 10}).map(() => `<td><input type="number" class="form-control form-control-sm score" min="0"></td>`).join("")}
+        <td><input type="number" class="form-control form-control-sm strike" min="0"></td>
+        <td><input type="number" class="form-control form-control-sm spare" min="0"></td>
+        <td><input type="number" class="form-control form-control-sm break" min="0"></td>
+        <td class="total">0</td>
+      `;
+      scoreBody.appendChild(tr);
+    });
+
+    // Auto-calc totals
+    scoreBody.querySelectorAll("input").forEach(input => {
+      input.addEventListener("input", () => {
+        const row = input.closest("tr");
+        const scores = Array.from(row.querySelectorAll(".score, .strike, .spare, .break"))
+          .map(inp => parseInt(inp.value) || 0);
+        const total = scores.reduce((a, b) => a + b, 0);
+        row.querySelector(".total").textContent = total;
+      });
+    });
+  });
+
+  // Save button success alert
+  saveBtn.addEventListener("click", () => {
+    successAlert.classList.remove("d-none");
+
+    // Auto-hide after 3 seconds
+    setTimeout(() => {
+      successAlert.classList.add("d-none");
+    }, 3000);
+  });
+});
+</script>
+
+
+    
+	<script src="http://localhost/js/bootstrap/bootstrap.bundle.min.js"></script>
+	<script src="http://localhost/js/main.js"></script>
+  <script src="http://localhost/vendor/quill/quill.min.js"></script>
+  <script src="http://localhost/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="http://localhost/vendor/tinymce/tinymce.min.js"></script>
+  <script src="http://localhost/vendor/php-email-form/validate.js"></script>
+
+</body>
+</html>

@@ -26,8 +26,7 @@
 	@yield('content')
 
     @stack('scripts')
-	<!--Livewire Framework----->
-	@livewireScripts
+
 	<script src="{{ asset('bootsrap/js/bootstrap.bundle.min.js') }}" type="type/javascript" ></script>
 	<script src="{{ asset('boostrap/js/main.js')}}"></script>
 </body>

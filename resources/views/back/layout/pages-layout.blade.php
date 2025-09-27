@@ -105,8 +105,7 @@
 	@yield('content')
 
     @stack('scripts')
-	<!--Livewire Framework----->
-	@livewireScripts
+
 	<script src="{{ asset('js/bootstrap/bootstrap.bundle.min.js') }}"></script>
 	<script src="{{ asset('js/main.js')}}"></script>
   <script src="{{asset ('vendor/quill/quill.min.js')}}"></script>

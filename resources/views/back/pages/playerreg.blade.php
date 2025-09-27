@@ -10,7 +10,7 @@
       <h1>Registration</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+          <li class="breadcrumb-item"><a href="">Dashboard</a></li>
           <li class="breadcrumb-item">Tournament</li>
           <li class="breadcrumb-item active">Registration</li>
         </ol>

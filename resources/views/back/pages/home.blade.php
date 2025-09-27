@@ -11,7 +11,7 @@
       <h1>Dashboard</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="">Home</a></li>
           <li class="breadcrumb-item active">Dashboard</li>
         </ol>
       </nav>
@@ -50,7 +50,7 @@
               <div class="card info-card sales-card">
 
                
-                <a href='index'>
+                <a href=''>
                 <div class="card-body">
                   <h5 class="card-title">Players <span>| Total Number</span></h5>
 
