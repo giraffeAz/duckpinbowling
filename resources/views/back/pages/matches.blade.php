@@ -21,6 +21,12 @@
     <div class="row">
       <div class="col-lg-12">
 
+        <!-- Success Alert -->
+        <div id="successAlert" class="alert alert-success alert-dismissible fade show d-none" role="alert">
+           Match successfully saved!
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+
         <!-- Form to Add Match -->
         <div class="card mb-4">
           <div class="card-body">
@@ -33,22 +39,22 @@
                   <label class="form-label">Tournament</label>
                   <select class="form-select" name="tournament" id="tournamentSelect" required>
                     <option selected>-- Select Tournament --</option>
-                    <option value="1">2025 Zamba Cup</option>
+                    <option value="1">Zamba Open</option>
                     <option value="2">Summer Invitational</option>
                     <option value="3">Corporate League</option>
                   </select>
                 </div>
 
-               <div class="col-md-4">
-                    <label class="form-label">Match</label>
-                    <select class="form-select" name="match" id="matchSelect" required>
-                        <option value="">-- Select Match --</option>
-                    </select>
+                <div class="col-md-4">
+                  <label class="form-label">Match</label>
+                  <select class="form-select" name="match" id="matchSelect" required>
+                    <option value="">-- Select Match --</option>
+                  </select>
                 </div>
 
                 <div class="col-md-4">
                   <label class="form-label">Category</label>
-                  <select class="form-select" name="category" required>
+                  <select class="form-select" name="category" id="categorySelect" required>
                     <option value="">-- Select --</option>
                     <option value="Singles">Singles</option>
                     <option value="Doubles">Doubles</option>
@@ -133,21 +139,27 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 
 <script>
-
 const bracketMatches = {
-  "Tournament A": [
-    "Team Alpha vs Team Beta",
-    "Team Gamma vs Team Delta"
+  "1": [ // Zamba Cup 2025
+    "Player 1 vs Player 2",
+    "Player 3 vs Player 4",
+    "Player 5 vs Player 6"
   ],
-  "Tournament B": [
+  "2": [
     "Team X vs Team Y",
     "Team Z vs Team W"
+  ],
+  "3": [
+    "Alpha vs Beta",
+    "Gamma vs Delta"
   ]
 };
 
 document.getElementById("tournamentSelect").addEventListener("change", function() {
   const selectedTournament = this.value;
   const matchSelect = document.getElementById("matchSelect");
+  const categorySelect = document.getElementById("categorySelect");
+
   matchSelect.innerHTML = `<option value="">-- Select Match --</option>`;
 
   if (bracketMatches[selectedTournament]) {
@@ -157,14 +169,19 @@ document.getElementById("tournamentSelect").addEventListener("change", function(
       option.textContent = match;
       matchSelect.appendChild(option);
     });
+
+    // If Zamba Cup, auto-select Singles
+    if (selectedTournament === "1") {
+      categorySelect.value = "Singles";
+    }
   }
 });
-
 
 document.addEventListener("DOMContentLoaded", function () {
   const matchForm = document.getElementById("matchForm");
   const matchesBody = document.getElementById("matchesBody");
   const downloadBtn = document.getElementById("downloadPdf");
+  const successAlert = document.getElementById("successAlert");
 
   let schedules = [];
 
@@ -184,6 +201,12 @@ document.addEventListener("DOMContentLoaded", function () {
     schedules.push(match);
     renderTable();
     matchForm.reset();
+
+    // Show success alert
+    successAlert.classList.remove("d-none");
+    setTimeout(() => {
+      successAlert.classList.add("d-none");
+    }, 2500);
   });
 
   function renderTable() {

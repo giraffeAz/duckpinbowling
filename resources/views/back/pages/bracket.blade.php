@@ -25,6 +25,13 @@
           <div class="card-body">
             <h5 class="card-title">Tournament Bracket</h5>
 
+            <!-- Success Alert (hidden initially) -->
+            <div id="successAlert" class="alert alert-success alert-dismissible fade show d-none" role="alert">
+              <i class="bi bi-check-circle me-1"></i>
+              Bracket has been successfully saved!
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+
             <!-- Select Active Tournament -->
             <div class="row mb-3">
               <label class="col-sm-2 col-form-label">Active Tournament</label>
@@ -33,7 +40,7 @@
                   <option value="">-- Select Tournament --</option>
                   <option value="1">Summer Cup 2025</option>
                   <option value="2">Zamba Open</option>
-                  <option value="3">Bowling Fiesta</option>
+                  <option value="3">Corporate League</option>
                 </select>
               </div>
               <div class="col-sm-2">
@@ -96,11 +103,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const bracketContainer = document.getElementById("bracketContainer");
   const saveBtn = document.getElementById("saveBracket");
   const activeTournament = document.getElementById("activeTournament");
+  const successAlert = document.getElementById("successAlert");
 
   // Example teams (mock data only)
   const tournamentTeams = {
     1: ["Team A", "Team B", "Team C", "Team D", "Team E", "Team F", "Team G", "Team H"],
-    2: ["Red", "Blue", "Green", "Yellow"],
+    2: ["Player 1", "Player 2", "Player 3", "Player 4", "Player 5", "Player 6"],
     3: ["Alpha", "Beta", "Gamma", "Delta"]
   };
 
@@ -137,13 +145,11 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   function renderBracket() {
-    // Clear containers
     document.getElementById("quarterfinals").innerHTML = "";
     document.getElementById("semifinals").innerHTML = "";
     document.getElementById("finals").innerHTML = "";
     document.getElementById("champion").innerHTML = "";
 
-    // Quarterfinals
     bracket.quarterfinals.forEach((m, idx) => {
       document.getElementById("quarterfinals").innerHTML += `
         <div class="match p-2 border mb-3">
@@ -158,7 +164,6 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
     });
 
-    // Semifinals
     bracket.semifinals.forEach((m, idx) => {
       document.getElementById("semifinals").innerHTML += `
         <div class="match p-2 border mb-3">
@@ -173,7 +178,6 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
     });
 
-    // Finals
     bracket.finals.forEach((m, idx) => {
       document.getElementById("finals").innerHTML += `
         <div class="match p-2 border mb-3">
@@ -188,7 +192,6 @@ document.addEventListener("DOMContentLoaded", function () {
       `;
     });
 
-    // Champion
     if (bracket.champion) {
       document.getElementById("champion").innerHTML = `
         <div class="match p-2 border mb-3 bg-success text-white text-center">
@@ -198,11 +201,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Expose to global for select onchange
   window.setWinner = function(round, idx, winner) {
     bracket[round][idx].winner = winner;
 
-    // Progress winners
     if (round === "quarterfinals") {
       const winners = bracket.quarterfinals.map(m => m.winner).filter(Boolean);
       if (winners.length === bracket.quarterfinals.length) {
@@ -230,20 +231,22 @@ document.addEventListener("DOMContentLoaded", function () {
     renderBracket();
   };
 
-  // SAVE (Front-end only)
   saveBtn.addEventListener("click", function () {
     if (!activeTournament.value) {
       alert("Please select a tournament.");
       return;
     }
 
-    // Option 1: Log bracket
-    console.log("Bracket Saved:", bracket);
-
-    // Option 2: Store in localStorage
+    // Save mock
     localStorage.setItem("bracket_" + activeTournament.value, JSON.stringify(bracket));
 
-    alert("Bracket saved (front-end only). Check console or localStorage.");
+    // Show success alert
+    successAlert.classList.remove("d-none");
+
+    // Auto-hide after 3s
+    setTimeout(() => {
+      successAlert.classList.add("d-none");
+    }, 3000);
   });
 });
 </script>

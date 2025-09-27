@@ -29,7 +29,7 @@
             </label>
             <select id="tournamentSelect" class="form-select">
               <option selected disabled>-- Choose Tournament --</option>
-              <option value="1">2025 Zamba Cup</option>
+              <option value="1">Zamba Open</option>
               <option value="2">Summer Invitational</option>
               <option value="3">Corporate League</option>
             </select>

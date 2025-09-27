@@ -35,7 +35,7 @@
                   <div class="d-flex align-items-center">
                     <div class="ps-3">
                     
-                      <h6>IT vs. CS</h6>
+                      <h6>Corporate League</h6>
 
                     </div>
                   </div>

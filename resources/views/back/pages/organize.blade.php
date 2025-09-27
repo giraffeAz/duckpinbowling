@@ -35,19 +35,29 @@
           </thead>
           <tbody>
             <tr>
-              <td>Summer Cup 2025</td>
-              <td>2025-09-01</td>
-              <td>2025-09-15</td>
+              <td>Zamba Open</td>
+              <td>2025-09-26</td>
+              <td>2025-10-10</td>
               <td><span class="badge bg-success">Active</span></td>
               <td>
                 <button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button>
                 <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
               </td>
             </tr>
+             <tr>
+              <td>Summer Invitation</td>
+              <td>2025-09-26</td>
+              <td>2025-10-10</td>
+              <td><span class="badge bg-warning">Upcoming</span></td>
+              <td>
+                <button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></button>
+              </td>
+            </tr>
             <tr>
-              <td>Zamba Open</td>
-              <td>2025-08-01</td>
-              <td>2025-08-10</td>
+              <td>Corporate League</td>
+              <td>2025-09-26</td>
+              <td>2025-10-10</td>
               <td><span class="badge bg-secondary">Completed</span></td>
               <td>
                 <button class="btn btn-sm btn-primary"><i class="bi bi-pencil"></i></button>
